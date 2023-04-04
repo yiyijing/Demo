@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        html{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            position: absolute;
+        }
+    </style>
+    <script src="./lib/jquery.js"></script>
+
+</head>
+<body>
+    <div>
+        <img src="./angel.gif" alt="" id="angel">
+    </div>
+
+
+    <!-- 不使用节流实现鼠标跟随效果 -->
+    <script>
+        // 获取图片
+        var angel=$('#angel');
+        // 为图片添加鼠标移动时间
+        $(document).on('mouseover',function(e){
+            // 设置鼠标的移动
+            $(angel).css('left',e.pageX+'px').css('top',e.pageY+'px')
+        })
+
+    </script>
+</body>
+</html>

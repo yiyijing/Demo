@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = "gggjjggyyyooppoooww"
+        var max = 0;
+        var char=""
+        //    console.log(arr);
+        var obj = {}
+        for (var i = 0; i < str.length; i++) {
+            let chars=str.charAt(i)
+            if (obj[chars]) {
+                obj[chars]++
+            } else {
+                obj[chars] = 1
+            }
+        }
+        for (var key in obj) {
+            if (obj[key]>max){
+                max=obj[key]
+                char=key
+            }
+            console.log("字符"+key+"出现的次数是"+obj[key]+"次");
+       }
+       console.log(`出现次数最多的是${char}出现次数为${max}`);
+    </script>
+</body>
+
+</html>

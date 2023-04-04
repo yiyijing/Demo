@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>发送请求</button>
+    <button>取消请求</button>
+    <script>
+        let btn=document.querySelectorAll("button")
+        let xhr=null
+        let sending=false
+        btn[0].onclick=function(){
+            if(sending) { xhr.abort() }
+            // 第一步：创建对象
+            xhr=new XMLHttpRequest()
+
+            sending=true
+
+            // 第二步：初始化数据
+            xhr.open("get","http://127.0.0.1:8080/service")
+            // 第三步：发送
+            xhr.send()
+            // 第四步：注册事件
+            xhr.onreadystatechange=function(){
+                if(xhr.readyState===4){
+                    sending=false
+                    if(xhr.status>=200 && xhr.status<300){
+                        let data=JSON.parse(xhr.response)
+                        console.log(data.name);
+                    }
+                }
+            }
+        }
+        // btn[1].onclick=function(){
+        //     // console.log(111);
+        //     xhr.abort();
+        // }
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fun(n, o) {
+            console.log(o);
+            return {
+                fun: function (m) {
+                    return fun(m, n);
+                }
+            }
+        }
+        
+
+        var a = fun(0);  //当执行这句话的时候会调用fun(0，o)   undefined 返回出来一个对象，对象里面是一个函数fun
+
+        /* 此时a相当于
+        a = {
+                fun: function (m) {
+                    return fun(m, n);
+                }
+            }*/
+
+        a.fun(1);   //当执行这句话的时候，会调用a对象里面的fun(1)
+        /*
+        fun: function (1) {
+                    return fun(m, n);
+                }
+        */
+                //    返回出来的是fun(1,0),再次调用fun(1,0)    打印输出0，返回对象a
+        a.fun(2);        //当执行这句话的时候，会调用a对象里面的fun(2)
+        /*
+        fun: function (2) {
+                    return fun(2, 0);     //返回出来的是fun(2,0),再次调用fun(2,0)    打印输出0，返回对象a
+                }
+        */
+        a.fun(3); //综上一样
+        // 原因：因为a.一直是用的是a对象
+
+        var b = fun(0).fun(1).fun(2).fun(3);     /*这个在执行的时候b = fun(0)的是一个对象      b = fun(0)=返回对象 {fun: function () {return fun(m,n)}}    此时o=undefined
+         继续.返回的fun(1)的对象    b = fun(0).fun(1)的时候会调用对象里面的函数{fun: function (1) {return fun(1,0)}}     此时的根据作用域链向上查找o=0   
+         继续.返回的fun(2)的对象    b = fun(0).fun(1).fun(2)的时候会调用对象里面的函数{fun: function (2) {return fun(2,1)}}   此时的o是fun(0).fun(1)里面的o o=1
+          继续.返回的fun(3)的对象   b = fun(0).fun(1).fun(2).fun(3)的时候o=2
+        */
+
+        var c = fun(0).fun(1);  //o=0
+        c.fun(2);     //o=1
+        c.fun(3);     //o=1
+    </script>
+
+
+
+</body>
+
+
+</html>

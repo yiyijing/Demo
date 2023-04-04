@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <div></div>
+    <script>
+        var btn=document.querySelector('button');
+        var d=document.querySelector('div');
+        var time=5;
+        btn.addEventListener('click',function(){
+            location.href='file:///C:/Users/86173/Desktop/javascrpit/%E6%A1%88%E4%BE%8B/12-%E5%80%92%E8%AE%A1%E6%97%B6%E6%95%88%E6%9E%9C.html';
+
+        })
+        
+        setInterval(function(){
+            if(time==0){
+                location.href='file:///C:/Users/86173/Desktop/javascrpit/%E6%A1%88%E4%BE%8B/12-%E5%80%92%E8%AE%A1%E6%97%B6%E6%95%88%E6%9E%9C.html';
+            }else{
+                d.innerHTML='将在'+time+'秒后进入首页';
+                time--;
+            }
+        },1000)
+    </script>
+</body>
+</html>

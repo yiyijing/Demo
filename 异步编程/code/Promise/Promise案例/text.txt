@@ -1,0 +1,5 @@
+4.ctx.moveTo（x，y）：设置路径的起点
+
+5.ctx.lineTo(x,y):设置路径的另一个点
+
+6.ctx.stroke():绘制路径（空心）

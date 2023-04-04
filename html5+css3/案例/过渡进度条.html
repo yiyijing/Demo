@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>标题标签</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border-sizing: border-box;
+        }
+        .father{
+            width: 200px;
+            height: 20px;
+            margin: 20px auto;
+            border: 2px solid red;
+            padding: 1px;
+            border-radius: 10px;
+        }
+        .son{
+            width: 50%;
+            height: 100%;
+            background: red;
+            transition: all .2s;
+        }
+        .father:hover .son{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+</html>

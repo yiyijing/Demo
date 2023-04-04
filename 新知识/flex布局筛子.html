@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: #ccc;
+        }
+        section{
+            display: flex;
+            width: 1000px;
+            /* flex-flow: row space-around; */
+            flex-direction: row;
+            justify-content: space-around;
+
+        }
+        section div{
+            display: flex;
+            width: 110px;
+            height: 110px;
+            background: #fff;
+            border-radius: 15px;
+        }
+        span{
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            border-radius: 50% 50%;
+        }
+        .box1{
+            /* 主轴上子元素的排列位置 */
+            justify-content: center;
+            /* 侧轴子元素的排列位置 */
+            align-items: center;
+        }
+        .box2{
+            /* 主轴是y轴 */
+            flex-direction: column;
+            /* 侧轴居中对齐 */
+            align-items: center;
+            /* 平分主轴剩余 */
+            justify-content: space-around;
+        }
+        .box3{
+            /* 主轴是y轴 */
+            flex-direction: column;
+            /* 平分主轴的剩余空间 */
+            /* 平分主轴剩余 */
+            justify-content: space-between;
+        }
+        .box3 span:nth-of-type(2){
+            /* 侧轴居中对齐 */
+            align-self: center;
+        }
+        .box3 span:nth-of-type(3){
+            /* 第三个圆点侧轴从右往左排列 */
+            align-self: flex-end;
+        }
+        .box4 .left,
+        .box4 .right{
+            /* 主轴是y轴 */
+            flex-direction: column;
+            /* 平分主轴剩余空间 */
+            justify-content: space-around;
+            /* 侧轴居中对齐 */
+            align-items: center;
+        }
+        .box5 .left,
+        .box5 .right{
+            /* 主轴是y轴 */
+            flex-direction: column;
+            /* 平分主轴剩余空间 */
+            justify-content: space-around;
+            /* 侧轴居中对齐 */
+            align-items: center;
+        }
+        .box5 .center{
+            justify-content: center;
+            align-items: center;
+        }
+        .box6{
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: space-around;
+            align-content:  space-around;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="box1">
+            <span></span>
+        </div>
+        <div class="box2">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="box3">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div  class="box4">
+            <div class="left">
+                <span></span>
+                <span></span>
+            </div>
+            <div class="right">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div  class="box5">
+            <div class="left">
+                <span></span>
+                <span></span>
+            </div>
+            <div class="center">
+                <span></span>
+            </div>
+            <div class="right">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div  class="box6">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </section>
+</body>
+</html>

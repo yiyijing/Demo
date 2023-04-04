@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" id="al">
+                </th>
+                <th>第二列</th>
+                <th>第三列</th>
+                <th>第四列</th>
+                <th>第五列</th>
+                <th>第六列</th>
+            </tr>
+        </thead>
+        <tbody id="td">
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>第二排</td>
+                <td>第二排</td>
+                <td>第二排</td>
+                <td>第二排</td>
+                <td>第二排</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>第三排</td>
+                <td>第三排</td>
+                <td>第三排</td>
+                <td>第三排</td>
+                <td>第三排</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>第四排</td>
+                <td>第四排</td>
+                <td>第四排</td>
+                <td>第四排</td>
+                <td>第四排</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var al=document.getElementById('al');
+        var chec=document.getElementById('td').getElementsByTagName('input');
+        al.onclick=function(){
+         for(var i=0;i<chec.length;i++){
+            chec[i].checked=this.checked;
+         }
+       }
+       for(var i=0;i<chec.length;i++){
+        chec[i].onclick=function(){
+            var flag=true;
+            for(var i=0;i<chec.length;i++){
+                if(!chec[i].checked){
+                    flag=false;
+                    break;
+                }
+            }
+            al.checked=flag;
+        }
+       }
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: #000;
+        }
+        .map{
+            position: relative;
+            width: 747px;
+            height: 617px;
+            background: url(images/map.png) no-repeat;
+            margin: 0 auto;
+        }
+        .city{
+            position: absolute;
+            left: 541px;
+            top: 233px;
+        }
+        .tb{
+            position: absolute;
+            left: 656px;
+            top: 505px;
+        }
+        .gz{
+            position: absolute;
+            left: 544px;
+            top: 519px;
+        }
+        .city .dotted{
+            width: 8px;
+            height: 8px;
+            background: #09f;
+            border-radius: 50%;
+        }
+        .city div[class^="pus"]{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            box-shadow: 0 0 12px #009fd0;
+            animation: sca 1.0s linear infinite;
+        }
+        @keyframes sca{
+            0%{}
+            50%{
+                width: 25px;
+                height: 25px;
+                opacity: 1;
+            }
+            100%{
+                width: 39px;
+                height: 39px;
+                opacity: 0;
+            }
+        }
+        .map .city .pus2{
+            animation-delay: 0.5s;
+        }
+        .map .city .pus3{
+            animation-delay: 0.6s;
+        }
+        /* .pus1{
+            width: 8px;
+            height: 8px;
+            box-shadow: 0 0 12px cornflowerblue;
+        } */
+    </style>
+</head>
+<body>
+    <div class="map">
+        <div class="city">
+            <div class="dotted"></div>
+            <div class="pus1"></div>
+            <div class="pus2"></div>
+            <div class="pus3"></div>
+        </div>
+        <div class="city tb">
+            <div class="dotted"></div>
+            <div class="pus1"></div>
+            <div class="pus2"></div>
+            <div class="pus3"></div>
+        </div>
+        <div class="city gz ">
+            <div class="dotted"></div>
+            <div class="pus1"></div>
+            <div class="pus2"></div>
+            <div class="pus3"></div>
+        </div>
+    </div>
+</body>
+</html>

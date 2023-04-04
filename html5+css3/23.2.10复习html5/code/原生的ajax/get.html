@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result{
+            width: 350px;
+            height: 350px;
+            border: 1px solid skyblue;
+        }
+    </style>
+</head>
+<body>
+    <button>点击发送请求</button>
+    <div id="result">
+    </div>
+    <script>
+        const btn=document.querySelector("button")
+        const result =document.getElementById("result")
+        btn.onclick=function(){
+            // 创建对象
+            const xhr=new XMLHttpRequest()
+            // 初始化，设置请求信息
+            xhr.open("GET","http://127.0.0.1:8080/service")
+            // 发送
+            xhr.send()
+            // 注册事件
+            xhr.onreadystatechange=function(){
+                // readyState状态值
+                // 0：未初始化，没有调用send方法      1：已经调用send方法，正在发送请求
+                // 2：send方法执行完成，已经收到全部的响应内容    3：正在解析响应内容
+                // 4：响应内容解析完成，可以在客户端调用了
+                // 返回所有的请求头
+                if(xhr.readyState===4){
+                    if(status>=200 || status<300){
+                        // 状态码 200:ok    404:not found    301:永久重定向    302：临时重定向
+                        console.log(xhr.status);   //状态码
+                        console.log(xhr.statusText);   //状态字符串
+                        console.log(xhr.getAllResponseHeaders);   //所有响应头
+                        console.log(xhr.response);   ///响应体
+                        result.innerHTML = xhr.response
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

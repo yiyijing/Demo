@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="int" type="text">
+</body>
+<script>
+    
+    document.querySelector("input").oninput=throttle(function(){console.log("input变化了");
+},1000)
+   // 封装节流函数
+   function throttle(fn,time){
+    let isload=false
+    return ()=>{
+        if(!isload){
+            isload=true
+            setTimeout(()=>{
+                fn();
+                isload=false
+            },time)
+        }
+    }
+   }
+
+    // 封装节流函数
+    function double(fn, time) {
+        let isLoad = false
+        return () => {
+            if (!isLoad) {
+                // 设置为true后，即禁止下一个计时器执行
+                isLoad = true
+                setTimeout(() => {
+                    fn()
+                    // 等这个计时器执行完毕后，再设置为false，才允许下一个计时器执行
+                    isLoad = false
+                }, time)
+            }
+        }
+    }
+</script>
+
+
+</html>

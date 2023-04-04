@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 500px;
+            margin: 20px auto;
+            border: 1px solid black;
+        }
+        thead{
+            height: 40px;
+            background: #ccc;
+            color: black;
+        }
+        th{
+            padding: 0 15px;
+        }
+        tr th{
+            border: 1px solid black;
+        }
+        tr td{
+            border: 1px solid black;
+        }
+        
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+        var datas=[
+            {
+                name: '魏璎珞',
+                subject: 'java',
+                scor: 88
+            },
+            {
+                name: '魏璎珞',
+                subject: 'java',
+                scor: 99
+            },
+            {
+                name: '魏璎珞',
+                subject: 'java',
+                scor: 69
+            },
+            {
+                name: '魏璎珞',
+                subject: 'java',
+                scor: 80
+            }
+        ];
+        var by=document.querySelector('tbody');
+        for(var i=0;i<datas.length;i++){
+            var tr=document.createElement('tr');
+            by.appendChild(tr);
+            for(k in datas[i]){
+                var td=document.createElement('td');
+                td.innerHTML=datas[i][k];
+                tr.appendChild(td);
+
+            }
+            var tdd=document.createElement('td');
+            tdd.innerHTML='<a href="javascript:;">删除</a>';
+            tr.appendChild(tdd);
+        }
+        var as = document.querySelectorAll('a');
+        for (var i = 0; i < as.length; i++) {
+            as[i].onclick = function() {
+                // 点击a 删除 当前a 所在的行(链接的爸爸的爸爸)  node.removeChild(child)  
+                by.removeChild(this.parentNode.parentNode)
+            }
+        }
+    </script>
+</body>
+</html>

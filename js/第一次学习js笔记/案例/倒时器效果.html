@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 250px;
+            margin: 100px auto;
+        }
+        div span{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            margin: 0 5px;
+            background-color: #333;
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <span class="hou">1</span>
+        <span class="min">2</span>
+        <span class="sec">3</span>
+    </div>
+    <script>
+        var hour=document.querySelector('.hou');
+        var mine=document.querySelector('.min');
+        var sece=document.querySelector('.sec');
+        var inputTime = +new Date('2022-9-13 00:00:00'); 
+        getTi();
+        setInterval(getTi,1000);
+
+        function getTi(){
+            var nowtime=+new Date();                  //现在时间的毫秒数
+                         //输入的总毫秒数
+            var time=(iputtime-nowtime)/1000;             //剩余的秒数
+            var h=parseInt(time / 60 / 60 % 24);
+            h = h < 10 ? '0'+h : h;
+            hour.innerHTML=h;
+            var m=parseInt(time / 60 % 60);
+            m = m < 10 ? '0'+m : m;
+            mine.innerHTML=m;
+            var s=parseInt(time % 60);
+            s = s < 10 ? '0'+s : s;
+            sece.innerHTML=s;
+        }
+    </script>
+</body>
+</html>

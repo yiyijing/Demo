@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result{
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="result"></div>
+    <!-- <script>
+        const result=document.getElementById("result")
+        // mouseover 
+        result.addEventListener("mouseover",function(){
+            // 创建xml对象
+            let xhr= new XMLHttpRequest()
+            // 初始化，设置url
+            xhr.open("POST","http://127.0.0.1:8080/service")
+            // 发送请求
+            xhr.send()
+            // 注册事件
+            xhr.onreadystatechange=function(){
+                if(xhr.readyState===4 && xhr.status===200){
+
+                    result.innerHTML=xhr.response
+                }
+            }
+
+        })
+    </script> -->
+
+    <script>
+        let result=document.getElementById("result")
+        result.onmousedown=function(){
+            // 第一步：创建xml对象
+            let xhr = new XMLHttpRequest()
+            // 第二步：初始化数据
+            xhr.open("get","http://127.0.0.1:8080/service")
+            // "http://127.0.0.1:8080/service"
+            // 第三步：发送请求
+            xhr.send()
+            // 第四步：注册事件
+            xhr.onreadystatechange=function(){
+                if(xhr.readyState===4 && xhr.status===200){
+                    let date=JSON.parse(xhr.response)
+                    result.innerHTML=date.name
+                    // console.log(xhr.response);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

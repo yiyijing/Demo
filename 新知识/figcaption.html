@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing:border-box
+        }
+        
+        figure {
+            overflow: hidden;
+            position: relative;
+            min-width: 380px;
+            max-width: 450px;
+            margin: 100px auto;
+            max-height: 330px;
+            cursor: pointer;
+            color: #f0f8ff;
+            background: linear-gradient(-45deg, #34495e 0%, #cc6055 100%);
+
+        }
+        figure img{
+            display: block;
+            width: 450px;
+        }
+        figcaption,figcaption h2,figcaption p{
+            position: absolute;
+        }
+        figcaption{
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+            top: 0;
+            left: 0;
+        }
+        figcaption h2{
+            left: 30%;
+            top: 13%;
+            transition: transform 0.35s;
+            text-transform: uppercase;
+            transform: scale(0.6);
+        }
+        figcaption p{
+            left: 8%;
+            top: 55%;
+            width: 85%;
+            padding: 7px;
+            opacity: 0;
+            border: 1px solid #fff;
+            text-transform: uppercase;
+            transition: opacity 0.35s, transform 0.35s, bottom 0.35s;
+            transform: scale(0.6);        
+        }
+        figure:hover img{
+                transform: scale(2,2);
+                transition: opacity 0.35s, transform 0.35s;
+                opacity: 0,1;
+        }
+        figure:hover p{
+                opacity: 1;
+                transition: opacity 0.35s, transform 0.35s;
+                transform: scale(1);    
+        }
+        figcaption h2{
+            transition: opacity 0.35s, transform 0.35s;
+            transform: scale(1);
+        }
+    </style>
+</head>
+
+<body>
+    <figure>
+        <img src="../images/1.png">
+        <figcaption>
+            <h2>Messy<span>Duke</span></h2>
+            <p>Duke is very bored. When he looks at the sky, he feels to run.</p>
+        </figcaption>
+    </figure>
+
+    <img style="display: none;" src="../images/2.png" alt="">
+</body>
+
+</html>

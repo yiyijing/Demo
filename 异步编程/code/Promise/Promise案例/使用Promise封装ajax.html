@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>获取姓名</button>
+
+    <script>
+        var btn = document.querySelector("button")
+        btn.onclick = function () {
+            let p = new Promise((resolve, reject) => {
+                // 创建对象
+                var xhr = new XMLHttpRequest()
+                // 初始化
+                xhr.open("get", "http://127.0.0.1:8080/user")
+
+                // 发送数据
+                xhr.send()
+                // 注册事件
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status >= 200 && xhr.status < 300) {
+                            let data = JSON.parse(xhr.response)
+                            // console.log();/
+                            resolve(data.name)
+                        } else {
+                            reject(xhr.status)
+                        }
+                    }
+                }
+            },
+                
+            )
+            p.then((name) => {
+                    console.log(name);
+                }, (value) => {
+                    console.log(value);
+                })
+        }
+    </script>
+</body>
+
+</html>

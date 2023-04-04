@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function countDown(time){
+            var nowtime=+new Date();                  //现在时间的毫秒数
+            var iputtime=+new Date(time);             //输入的总毫秒数
+            var time=(iputtime-nowtime)/1000;             //剩余的秒数
+            var days=parseInt(time/60/60/24);
+            days = days < 10 ? '0'+days : days;
+            var h=parseInt(time/60/60%24);
+            h = h < 10 ? '0'+h : h;
+            var m=parseInt(time/60%60);
+            m = m < 10 ? '0'+m : m;
+            var s=parseInt(time%60);
+            s = s < 10 ? '0'+s : s;
+            return days + '天' + h +'时' + m + '分' + s + '秒';
+        }
+        alert(countDown('2022-8-22 00:00:00'));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

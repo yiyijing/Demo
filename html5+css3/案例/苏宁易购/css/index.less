@@ -1,0 +1,111 @@
+@import "common";
+@numfont: 50;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    min-width: 320px;
+    width: 15rem;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-family: Arial,Helvetica;
+    background: fff;
+    margin: 0 auto;
+}
+
+/* <!-- 顶部搜索框开始 --> */
+.search-content{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15rem;
+    height: (88rem / @numfont );
+    background: #FFC001;
+    .classify{
+        width: (44rem / @numfont );
+        height: (70rem /@numfont) ;
+        margin: (11rem /@numfont ) (25rem /@numfont ) (7rem /@numfont ) (24rem /@numfont );
+        background: url(../images/classify.png) no-repeat;
+        background-size: (44rem / @numfont )  (70rem /@numfont);
+    }
+    .search{
+        flex: 1;
+        input{
+            height: (66rem / @numfont);
+            width: (562rem / @numfont);
+            border-radius: (35rem / @numfont);
+            background: #FFF2CC;
+            
+            border: 0;
+            text-align: left;
+            padding-left: (65rem / @numfont);
+            color: #666;
+            font-size: (18rem / @numfont);
+        }
+    }
+    .login{
+        width: (75rem / @numfont);
+        height: (70rem / @numfont);
+        margin: (10rem / @numfont);
+        color: #fff;
+        font-size: (16rem / @numfont);
+        text-align: center;
+        line-height: (70rem / @numfont);
+    }
+}
+/* <!-- 顶部搜索框结束 --> */
+
+
+// banner模块开始
+.banner{
+    width: (750rem / @numfont);
+    height: (368rem / @numfont);
+    margin-top: (88rem / @numfont);
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+// banner模块结束
+
+// 广告模块开始
+.ad{
+    display: flex;
+    a{
+        flex: 1;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+// 广告模块结束
+
+// nav模块开始
+.nav{
+    width: (750rem / @numfont);
+    height: (280rem / @numfont);
+    a{
+        display: inline-block;
+        width: (150rem / @numfont);
+        height: (140rem / @numfont);
+        float: left;
+        text-align: center;
+        img{
+            display: block;
+            width: (82rem / @numfont);
+            height: (82rem / @numfont);
+            margin: (10rem / @numfont) (35rem / @numfont) (10rem / @numfont);
+        }
+        span{
+            display: block;
+            font-size: (25px / @numfont);
+            color: #333;
+        }
+    }
+}
+// nav模块结束

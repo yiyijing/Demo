@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr=['pink','红色','苹果','香蕉','苹果','pink','火锅','香蕉'];
+        var str=arr.indexOf('苹果');
+        var num=0;
+        while(str !== -1){
+            num++;
+            console.log(str);
+            str=arr.indexOf('苹果',str+1);
+        }
+        alert(num);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

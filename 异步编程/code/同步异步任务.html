@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="updateSync()">同步</button>
+    <button onclick="updateAsync()">异步</button>
+    <div id="output"></div>
+
+    <script>
+        function double(value, callback) {
+            setTimeout(() => callback(value * 2), 1000);
+        }
+        double(3, x => console.log(`我会得到: ${x}`)); // 我会得到:6 （大约1000毫秒后）
+
+        // 没有箭头函数就相当于
+        function double(value, callback) {
+            setTimeout(function () {
+                callback(value * 2)
+            }, 1000);
+        }
+        // 定义回调函数
+        function getResult(x) {
+            console.log(`我会得到: ${x}`);
+        }
+        double(3, getResult);
+// 我会得到:6 （大约1000毫秒后）
+</script>
+</body >
+
+</html >

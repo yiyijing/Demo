@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .result{
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    
+    <button>发送请求</button>
+    <div class="result"></div>
+    <script>
+        let btn=document.getElementsByTagName("button")[0]
+        let result=document.getElementsByClassName("result")[0]
+        btn.onclick=function(){
+            // 第一步：创建对象
+            const xhr=new XMLHttpRequest()
+
+
+            // 超时设置
+            xhr.timeout=2000
+            // 超时回调
+            xhr.ontimeout=function(){
+                alert("网络请求异常，请稍后重试")
+            }
+            // 网络异常回调
+            xhr.onerror=function(){
+                alert("无网络")
+            }
+
+            // 第二部：初始化数据
+            xhr.open("GET","http://127.0.0.1:8080/service")
+            // 第三步：发送数据
+            xhr.send()
+            // 第四步：注册事件
+            xhr.onreadystatechange=function(){
+                if(xhr.readyState===4 && xhr.status===200){
+                   let data=JSON.parse(xhr.response)
+                   result.innerHTML=data.name
+                }
+            }
+
+
+            
+        }
+    </script>
+</body>
+</html>

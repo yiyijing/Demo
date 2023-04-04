@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str="afddfewfgyuewyfhb";
+        var obj={};
+        for(var i=0;i<str.length;i++){
+            var chars=str.charAt(i);
+            if(obj[chars]){
+                obj[chars]++;
+            }else{
+                obj[chars]=1;
+            }
+        }
+        console.log(obj);
+        var max=0;
+        var ch;
+        for(k in obj){           //k是得到的属性值     obj[k]得到是属性值
+            if(max<obj[k]){
+                max=obj[k];
+                ch=k;
+            }
+        }
+        alert('出现次数最多的是'+ch+',出现了'+max+'次');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

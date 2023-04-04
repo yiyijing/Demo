@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                console.log("执行了任务1（异步）");
+                resolve(1)
+            },1000)
+        }).then(
+            value=>{
+                console.log("任务1的结果："+value);
+                console.log("执行任务2（同步）");
+                return 2
+            }
+        ).then(
+            value=>{
+                console.log("任务2的结果"+value);
+            }
+        )
+    </script>
+</body>
+</html>

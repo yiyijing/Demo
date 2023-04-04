@@ -1,0 +1,12 @@
+body{
+    min-width: 320px;
+    max-width: 750px;
+    width: 10rem;
+    margin: 0 auto;
+    line-height:  1.5;
+    font-family:  Arial,Helvetica;
+    background:  #F2F2F2;
+}
+div{
+    font-size: .2133rem;
+}

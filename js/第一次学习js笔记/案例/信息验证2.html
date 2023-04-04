@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            margin: 100px 300px;
+        }
+        .message{
+            display: inline-block;
+            background: url(images/mess.png) no-repeat left center;
+            padding-left: 20px;
+        }
+        .wrong{
+            background: url(images/wrong.png) no-repeat;
+        }
+        .right{
+            background: url(images/right.png) no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" class="inp">
+        <p class="message">请输入6-16位的密码</p>
+    </div>
+    <script>
+        var inpu=document.querySelector('.inp');
+        var pi=document.querySelector('.message');
+        inpu.onblur=function(){
+            if(this.value.length <6 || this.value.length>16){
+                pi.className='message wrong';
+                pi.innerHTML='输入错误，重新输入';
+            }else{
+                pi.className='message right';
+                pi.innerHTML='输入正确';
+            }
+        }
+    </script>
+</body>
+</html>

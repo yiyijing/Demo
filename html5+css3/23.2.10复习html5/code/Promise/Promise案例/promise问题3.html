@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+//         1. 简单表达：由then()指定的回调函数执行的结果决定
+        // 2. 详细表达：
+           //    。如果抛出异常，新的promise变为reject,reason为抛出的异常
+          //    。如果返回的是非promise的任意值，新promise变为resolved,value为返回的值
+          //    。如果返回的是另一个新的promsie，此时的promise的结果就会称为新的promise的结果
+          new Promise((resolve,reject)=>{
+            resolve(1)
+            // throw 3
+            // return Promise
+          }).then((value)=>{
+            console.log("成功的回调,"+value);
+            throw 5
+          },(reason)=>{
+            console.log("失败的回调,"+reason);
+          }).then((value)=>{
+            console.log("成功的回调,"+value);
+          },(reason)=>{
+            console.log("失败的回调,"+reason);
+          }).then((value)=>{
+            console.log("成功的回调,"+value);
+          },(reason)=>{
+            console.log("失败的回调,"+reason);
+          })
+
+
+    </script>
+</body>
+
+</html>

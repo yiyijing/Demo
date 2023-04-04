@@ -1,0 +1,166 @@
+
+/* 版心 */
+.w{
+    width: 1200px;
+    margin: 0 auto;
+}
+/* 头部logo部分 */
+.header{
+    height: 82px;
+    border-bottom: 1px solid #ededed;
+}
+.header img{
+    padding-top: 16px;
+}
+/* 注册区域 */
+.registarea{
+    height: 465px;
+    width: 100%;
+    margin-top: 22px;
+}
+.registarea h3{
+    height: 42px;
+    line-height: 42px;
+    padding: 0 10px;
+    background: #ececec;
+    border: 1px solid #dddddd;
+}
+.registarea h3 .hl{
+    float: left;
+    font-size: 18px;
+    color: #333333;
+}
+.registarea h3 .hr{
+    float: right;
+    margin-left: 8px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #333333;
+}
+.registarea h3 .hr em{
+    color: #c81623;
+}
+.registarea .reg-form ul{
+    width: 612px;
+    height: 422px;
+    padding-top: 50px;
+    margin: 0 auto;
+    border: 1px solid #000000;
+}
+/* 注册bd模块 */
+.registarea .reg-form ul li{
+    height: 38px;
+    line-height: 38px;
+    margin-bottom: 16px;
+}
+.registarea .reg-form ul li label{
+    display: inline-block;
+    width: 108px;
+    font-size: 12px;
+    color: #4c4c4c;
+    padding-right: 10px;
+    text-align: right;
+}
+.registarea .reg-form ul li .inp{
+    height: 35px;
+    width: 240px;
+    border: 1px solid #ededed;
+}
+.registarea .reg-form ul li .corr{
+    display: inline-block;
+    padding-left: 10px;
+    font-size: 12px;
+    color: #df3033;
+}
+.registarea .reg-form ul li .success{
+    display: inline-block;
+    padding-left: 10px;
+    font-size: 12px;
+    color: #40b83f;
+}
+.registarea .reg-form ul li:nth-child(3){
+    margin-bottom: 0;
+}
+.registarea .reg-form ul li span img{
+    margin-right: 7px;
+}
+
+.registarea .reg-form ul .safe{
+    font-size: 12px;
+    color: #b2b2b2;
+}
+.registarea .reg-form ul .safe {
+    padding-left: 190px;
+    margin-bottom: 2px;
+}
+.registarea .reg-form ul .safe em{
+    display: inline-block;
+    height: 13px;
+    width: 35px;
+    margin: 0 1px;
+    text-align: center;
+    line-height: 13px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+}
+.registarea .reg-form ul .safe .ruo{
+    background: #de1111;
+}
+.registarea .reg-form ul .safe .zhong{
+    background: #40b83f;
+}
+.registarea .reg-form ul .safe .qiang{
+    background: #f79100;
+}
+.registarea .reg-form ul .btn{
+    height: 38px;
+    margin-top: 25px;
+    padding-left: 100px;
+}
+.registarea .reg-form ul .check{
+    vertical-align: middle;
+}
+.registarea .reg-form ul .btn span{
+    display: inline-block;
+    font-size: 12px;
+    color: #4d4d4d;
+    padding-left: 10px;
+} 
+.registarea .reg-form ul .btn a span{
+    display: inline-block;
+    font-size: 12px;
+    color: #1ba1e6;
+    padding-left: 12px;
+}
+/* 完成注册模块 */
+.registarea .reg-form ul .complete{
+    width: 200px;
+    height: 35px;
+    margin: 35px auto 0;
+    background: #c81623;
+}
+.registarea .reg-form ul .complete a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* 版权模块 */
+.mod-copyright{
+    text-align: center;
+}
+.mod-copyright .links{
+    margin-top: 20px;
+    margin-bottom: 17px;
+}
+.mod-copyright .links a{
+    color: #666666;
+    font-size: 12px;
+    padding: 0 15px;
+    border-right: 1px solid #c8c8cd;;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            margin:  100px 200px;
+        }
+        li{
+            float: left;
+            width: 80px;
+            height: 50px;
+            list-style: none;
+            margin-left: 10px;
+            perspective: 300px;
+            transform-style: preserve-3d;
+        }
+        .box{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        .box:hover{
+            transform: rotateX(90deg);
+            transition: all .2s;
+        }
+        .front,
+        .bottom{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            font-size: 12px;
+            line-height: 50px;
+            text-align: center;
+        }
+        .front{
+            background: pink;
+            z-index: 1;
+            transform: translateZ(25px);
+        }
+        .bottom{
+            background: purple;
+            transform: translateY(50%) rotateX(-90deg);
+
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <div class="box">
+                <div class="front">黑马程序员</div>
+                <div class="bottom">欢迎你</div>
+            </div>
+
+        </li>
+        <li>
+            <div class="box">
+                <div class="front">黑马程序员</div>
+                <div class="bottom">欢迎你</div>
+            </div>
+
+        </li>
+        <li>
+            <div class="box">
+                <div class="front">黑马程序员</div>
+                <div class="bottom">欢迎你</div>
+            </div>
+
+        </li>
+        <li>
+            <div class="box">
+                <div class="front">黑马程序员</div>
+                <div class="bottom">欢迎你</div>
+            </div>
+
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            width: 1200px;
+        }
+        input{
+            width: 300px;
+            height: 50px;
+            margin: 100px 300px;
+            border: 1px solid #ccc;
+            outline: none;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" value="手机">
+    </div>
+    <script>
+        var inp=document.querySelector('input');
+        inp.onclick=function(){
+            if(inp.value==='手机'){
+                inp.value='';
+            }
+        }
+        inp.onblur=function(){
+            if(inp.value===''){
+                inp.value='手机';
+            }
+        }
+    </script>
+</body>
+</html>

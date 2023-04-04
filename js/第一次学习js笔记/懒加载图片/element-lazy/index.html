@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>模块懒加载</title>
+		<script type="text/javascript" src="js/element-lazy.js"></script>
+		<style>
+			.model {
+				position: relative;
+				width: 400px;
+				height: 600px;
+				margin: 40px auto;
+				visibility: hidden;
+				opacity: 0;
+				background-color: #00aa7f;
+				border: 1px solid ;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="app">
+			<div class="model"></div>
+			<div class="model"></div>
+			<div class="model"></div>
+			<div class="model"></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		new elLoad(".model", {
+			delay: 100
+		});
+	</script>
+</html>

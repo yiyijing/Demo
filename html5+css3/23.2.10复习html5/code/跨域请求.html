@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1_get">接口测试1：get请求带参数</button>
+    <button id="btn2_post"> 接口测试2:post-传递普通键值对</button>
+    <hr/>
+    <button id="btn3_postJSON">接口测试3:post-传递json</button>
+    <hr/>
+    <form id="myform">
+        <input type="text" name="title">
+        <input type="file" name="cover">
+    </form>
+    <button id="btn4_formdata">接口测试4:post-传递formdata</button>
+    <hr/>
+    <script src="./js/axios.js"></script>
+    <script>
+    document.getElementById('btn1_get').addEventListener('click',() => {
+        axios.get('http://localhost:3000/getapi', {params: {a:1,b:2}})
+    })
+    var obj = {
+        "name":"abc",
+        "address":{
+            "a":1,
+            "b":2,
+            "info":"c"
+        }
+    }
+    document.getElementById('btn2_post').addEventListener('click', () => {
+        const params = new URLSearchParams();
+        params.append('param1', 'value1');
+        params.append('param2', 'value2');
+        axios.post('http://localhost:3000/post', params, {
+            headers: {"content-type":"application/x-www-form-urlencoded"}})
+    })
+ 
+    document.getElementById('btn3_postJSON').addEventListener('click', () => {
+        axios.post('http://localhost:3000/postJSON', obj)
+    })
+ 
+    document.getElementById('btn4_formdata').addEventListener('click', () => {
+        console.log(1)
+        var fd = new FormData(document.getElementById('myform'));
+ 
+        axios.post('http://localhost:3000/publish', 
+            fd
+        )
+    })
+    </script>
+</body>
+</html>

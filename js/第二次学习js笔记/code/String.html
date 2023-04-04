@@ -1,0 +1,24 @@
+<script>
+   //实例化 Promise 对象
+const p = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+
+        // 成功调用resolve()处理
+        let data = "数据读取成功";
+        resolve(data);
+
+        // 失败调用reject()处理
+        let err = "数据读取失败";
+        reject(err);
+
+    }, 1000);
+});
+
+//调用 promise 对象的 then 方法
+p.then(function (value) {
+    console.log(value);
+}, function (reason) {
+    console.error(reason);
+});
+
+</script>

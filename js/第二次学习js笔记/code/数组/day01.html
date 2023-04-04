@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 问题1：计算给定数组 arr 中所有元素的总和
+        // (1)
+        // let arr=[1,2,3,4,5]
+        // let str=arr.reduce(function(total,val,index,array){
+        //    let sum= total+val
+        //    return sum
+        // })
+        // console.log(str);
+        // console.log(arr);
+        // (2)
+        // let arr=[1,2,3,4,5]
+        // let str=[]
+        // for(var i=0;i<arr.length;i++){
+        //     str[i]=arr[i]
+        // }
+        // console.log(str);
+        // 问题2：合并数组 arr1 和数组 arr2。不要直接修改数组 arr，结果返回新的数组
+        // let arr1=[1,2,3,4,5]
+        // let arr2=[6,2,3,4,5,6,8,9,0]
+        // let arr=arr1.concat(arr2)
+        // console.log(arr);
+        // 问题3：删除数组 arr 第一个元素。不要直接修改数组 arr，结果返回新的数组
+        // let arr1=[1,2,3,4,5]
+        // function del(a){
+        //     let arr2=a.slice(0)
+        //     arr2.shift()
+        //     return arr2
+        // }
+        // let arr3=del(arr1)
+        // console.log(arr3);
+        // 问题4： 在数组 arr 开头添加元素 item。不要直接修改数组 arr，结果返回新的数组
+        let arr=[4,5,6,7,8,9,10]
+        function pu(array){
+            let arr1=array.slice(0)
+            return arr1.unshift(1)
+        }
+        let arr2=pu(arr)
+        console.log(arr2);
+    </script>
+</body>
+</html>
